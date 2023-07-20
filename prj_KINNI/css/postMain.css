@@ -56,5 +56,3 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
 #postImgModal #btnPostImgCancel {margin: 22px 60px 0 40px; background-color: #fff;
     border : 1.5px solid #BFBBE8; box-sizing: border-box; float: left; cursor: pointer;}
 #postImgModal #btnPostImgSave {margin-top: 22px; background-color: #E1DFF2; clear: both; cursor: pointer;}
-
-
