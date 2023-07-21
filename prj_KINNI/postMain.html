@@ -25,18 +25,23 @@
             </textarea> -->
             <div id="postMainWrap">
                 <textarea id="postTxt" rows="1" maxlength="200" placeholder="| what is happening?" onfocus="this.placeholder = ''" onblur="this.placeholder = '| what is happening?'"></textarea>
+                <div id="postImg">
+                    <!-- <img src="../img_test/naverContect_modeling.png" alt="업로드된 이미지" class="newImage"> -->
+                </div>
             </div>
         </div>
         <div id="postLnb">
             <!-- <button id="btnPostImg"><a href="#"><i class="fa-solid fa-camera"></i></a></button> -->
-            <button id="btnPostImg"><i class="fa-solid fa-camera"></i></button>
+            <button id="btnPostImgAdd"><i class="fa-solid fa-camera"></i></button>
         </div>
         <div id="keyboard"></div>
         <div id="modalBg"></div>
         <div id="postImgModal">
             <p>사진 올리기</p>
             <div id="postImgUploadWrap">
-                <textarea id="postImgName" rows="1" readonly></textarea>
+                <div id="postImgNameWrap">
+                    <p id="postImgName"></p>
+                </div>
                 <button id="btnPostImgUpload">올리기</button>
                 <input id="postImgInput" type="file" accept="image/*">
             </div>

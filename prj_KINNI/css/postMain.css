@@ -10,24 +10,40 @@ button {background-color: transparent;}
 body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
 #postWrap {width: 390px; margin: auto; background-color: #fff; position: relative;}
 
-#postHead {width: 100%; height: 60px; 
+/* 헤드 영역 */
+#postHead {width: 390px; height: 60px; background-color: #fff; z-index: 9999;
     display: flex; align-items: center; justify-content: space-between;}
 #postHead button {height: 30px; line-height: 31px; margin: 0 20px 0;
     font-size: 15px; font-weight: bold; font-family: 'Nanum Gothic', sans-serif;}
 #postHead #btnPostCancel {width: 30px; color: #444; cursor: pointer;}
 #postHead #btnPostKinni {width: 55px; background-color: #E1DFF2; border-radius: 5px; color: #444; cursor: pointer;}
 
+/* 메인 영역 */
+#postMain {width: 100%; height: 355px; position: relative; max-height: 355px; overflow-y: auto;
+    /* background-color: rgba(0,0,255,.1); */
+}
+#postMain::-webkit-scrollbar {
+    width: 8px;
+}
+#postMain::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: #ddd;
+    border-radius: 4px;
+}
+#postMain::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
 
-#postMain {width: 100%; height: 355px; position: relative;}
-#postMain img {width: 30px; height: 30px; border-radius: 50%; position: absolute; top: 20px; left: 40px;}
+#postMain > img {width: 30px; height: 30px; border-radius: 50%; position: absolute; top: 20px; left: 40px;}
 #postMain #postMainWrap {width: 280px; height: 335px; position: absolute; top: 20px; left: 90px;}
 #postMain #postMainWrap #postTxt {width: 280px; height: 30px; resize: none; font-size: 20px; font-family: 'Nanum Gothic', sans-serif; line-height: 1.4}
 
+/* 사이드바 메뉴 영역 */
 #postLnb {width: 100%; height: 76px;}
 #postLnb button {margin: 24px 20px 0 0; float: right; cursor: pointer;
     font-size: 26px; color: #444;
 }
-/* #postLnb button a {font-size: 26px; color: #444;} */
+    /* #postLnb button a {font-size: 26px; color: #444;} */
 
 #keyboard {width: 100%; height: 353px; background-color: #d9d9d9;}
 
@@ -37,17 +53,21 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
     display: none;
 }
 
+/* 모달 영역 */
 #postImgModal {width: 320px; height: 166px; background-color: #fff;
     border-radius: 5px;
     position: absolute; top: 167px; left: 50%; transform: translateX(-50%);
     display: none;
 }
 
-#postImgModal p {font-size: 17px; margin-top: 23px; text-align: center; font-weight: bold; color: #444;}
+#postImgModal > p {font-size: 17px; margin-top: 23px; text-align: center; font-weight: bold; color: #444;}
 #postImgModal #postImgUploadWrap {width: 240px; height: 20px; margin: 19px auto 0;}
 
-#postImgUploadWrap #postImgName {width: 185px; height: 20px; resize: none; float: left;
+#postImgUploadWrap #postImgNameWrap {width: 185px; height: 20px; resize: none; float: left;
     border-radius: 5px; border : 1.5px solid #BFBBE8; box-sizing: border-box; color: #444;}
+#postImgUploadWrap #postImgNameWrap p {width: 178px; font-size: 10px; line-height: 20px; float: left;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    margin-left: 4px; line-height: 1.7; font-weight: bold; color: #444;}
 #postImgUploadWrap #btnPostImgUpload {width: 50px; height: 20px; margin-left: 5px; background-color: #DEDAE5;
     border-radius: 5px; font-size: 10px; font-weight: bold; color: #444; clear: both; cursor: pointer;}
 #postImgUploadWrap input {visibility: hidden;}
@@ -56,3 +76,5 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
 #postImgModal #btnPostImgCancel {margin: 22px 60px 0 40px; background-color: #fff;
     border : 1.5px solid #BFBBE8; box-sizing: border-box; float: left; cursor: pointer;}
 #postImgModal #btnPostImgSave {margin-top: 22px; background-color: #E1DFF2; clear: both; cursor: pointer;}
+
+#postImg > img {width: 100%; object-fit: 'contain';}
