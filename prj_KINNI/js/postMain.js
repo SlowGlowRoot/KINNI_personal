@@ -52,6 +52,11 @@ $(function(){
             $("#btnPostImgCancel").text('삭제');
             $("#btnPostImgSave").attr('id', 'btnPostImgChange')
             $("#btnPostImgCancel").attr('id', 'btnPostImgRemove')
+
+            // $("#btnPostImgSave").css("display", "none")
+            // $("#btnPostImgCancel").css("display", "none")
+            // $("#btnPostImgChange").css("display", "block")
+            // $("#btnPostImgRemove").css("display", "block")
             
         }
     });
