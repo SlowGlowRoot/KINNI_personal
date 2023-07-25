@@ -36,7 +36,8 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
 
 #postMain > img {width: 30px; height: 30px; border-radius: 50%; position: absolute; top: 20px; left: 40px;}
 #postMain #postMainWrap {width: 280px; height: 335px; position: absolute; top: 20px; left: 90px;}
-#postMain #postMainWrap #postTxt {width: 280px; height: 30px; resize: none; font-size: 20px; font-family: 'Nanum Gothic', sans-serif; line-height: 1.4}
+#postMain #postMainWrap #postTxt {width: 280px; height: 30px; resize: none;
+    font-size: 20px; font-family: 'Nanum Gothic', sans-serif; line-height: 1.4; border-radius: 5px;}
 
 /* 사이드바 메뉴 영역 */
 #postLnb {width: 100%; height: 76px;}
@@ -67,7 +68,7 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
     border-radius: 5px; border : 1.5px solid #BFBBE8; box-sizing: border-box; color: #444;}
 #postImgUploadWrap #postImgNameWrap p {width: 178px; font-size: 10px; line-height: 20px; float: left;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    margin-left: 4px; line-height: 1.7; font-weight: bold; color: #444;}
+    margin-left: 4px; line-height: 1.8; font-weight: bold; color: #444;}
 #postImgUploadWrap #btnPostImgUpload {width: 50px; height: 20px; margin-left: 5px; background-color: #DEDAE5;
     border-radius: 5px; font-size: 10px; font-weight: bold; color: #444; clear: both; cursor: pointer;}
 #postImgUploadWrap input {visibility: hidden;}
@@ -77,4 +78,6 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
     border : 1.5px solid #BFBBE8; box-sizing: border-box; float: left; cursor: pointer;}
 #postImgModal #btnPostImgSave, #postImgModal #btnPostImgChange {margin-top: 22px; background-color: #E1DFF2; clear: both; cursor: pointer;}
 
-#postImg > img {width: 100%; object-fit: 'contain';}
+#btnPostImgRemove, #btnPostImgChange {display: none;}
+
+#postImg > img {width: 90%; margin: 15px auto 0; display: none; object-fit: contain; border-radius: 5px;}

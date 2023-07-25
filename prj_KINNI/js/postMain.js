@@ -1,5 +1,6 @@
 $(function(){
 
+    const fadeInOutTime = 150;
     const txtBoxHeight = 0;
     const txtBox = document.querySelector('#postTxt');
 
@@ -19,24 +20,38 @@ $(function(){
         }
     };
     
-        // 사진 추가(카메라 아이콘) 버튼
+    $("#postTxt").on('focusin', function(){
+        $(this).css('backgroundColor', '#f5f5f5')
+    });
+
+    $("#postTxt").on('focusout', function(){
+        if ($(this).val() == '') {
+            $(this).css('backgroundColor', '#ffffff')
+        } else {
+            $(this).css('backgroundColor', '#f5f5f5')
+        }
+    });
+
+        // 사진 넣기 버튼
     $("#btnPostImgAdd").click(function(){
         $("#postImgModal").fadeIn(0);
         $("#modalBg").fadeIn(0);
         $("#modalBg").css("background-color", "rgba(0,0,0,.3)")
+
+        
     });
 
-        // 사진 추가 취소 버튼
+        // 추가한 사진 취소 버튼
     $("#btnPostImgCancel").click(function(){
         $("#postImgModal").fadeOut(0);
         $("#modalBg").fadeOut(0);
         $("#modalBg").css("background-color", "transparent")
         var newImage = $("#postImg").children().last();
-        newImage.empty();
+        newImage.remove();
         $("#postImgName").text("");
     });
 
-        // 사진 추가 저장 버튼
+        // 추가한 사진 저장 버튼
     $("#btnPostImgSave").click(function(){
         var newImage = $("#postImg").children().last();
         if ($("#postImgName").text() == "") {
@@ -47,49 +62,78 @@ $(function(){
             $("#modalBg").fadeOut(0);
             $("#modalBg").css("background-color", "transparent")
             newImage.css("display", "block");
+            newImage.fadeOut(0);
+            newImage.fadeIn(fadeInOutTime);
 
-            $("#btnPostImgSave").text('변경');
-            $("#btnPostImgCancel").text('삭제');
-            $("#btnPostImgSave").attr('id', 'btnPostImgChange')
-            $("#btnPostImgCancel").attr('id', 'btnPostImgRemove')
-
-            // $("#btnPostImgSave").css("display", "none")
-            // $("#btnPostImgCancel").css("display", "none")
-            // $("#btnPostImgChange").css("display", "block")
-            // $("#btnPostImgRemove").css("display", "block")
-            
+            $("#btnPostImgSave").css("display", "none")
+            $("#btnPostImgCancel").css("display", "none")
+            $("#btnPostImgChange").css("display", "inline-block")
+            $("#btnPostImgRemove").css("display", "inline-block")
         }
     });
 
-        // 사진 업로드 버튼
+        // 추가한 사진 변경 버튼
+    $("#btnPostImgChange").click(function(){
+        var oldImage = $("#postImg").children().first();
+        var newImage = $("#postImg").children().last();
+        $("#postImgModal").fadeOut(0);
+        $("#modalBg").fadeOut(0);
+        $("#modalBg").css("background-color", "transparent")
+
+        if (oldImage.attr('src') != newImage.attr('src')) {
+            oldImage.remove();
+            newImage.css("display", "block");
+        } else {
+            // by pass
+        }
+    });
+
+        // 추가한 사진 삭제 버튼
+    $("#btnPostImgRemove").click(function(){
+        var askAgain = confirm("삭제하시겠습니까?")
+
+        if(askAgain) {
+            var oldImage = $("#postImg").children().first();
+            $("#postImgModal").fadeOut(0);
+            $("#modalBg").fadeOut(0);
+            $("#modalBg").css("background-color", "transparent")
+            oldImage.fadeOut(fadeInOutTime);
+            setTimeout(function(){
+                oldImage.remove();
+            }, fadeInOutTime)
+            $("#postImgName").text("");
+        } else {
+            // by pass
+        }
+
+        $("#btnPostImgSave").css("display", "inline-block")
+        $("#btnPostImgCancel").css("display", "inline-block")
+        $("#btnPostImgChange").css("display", "none")
+        $("#btnPostImgRemove").css("display", "none")
+    });
+
+        // 사진 업로드(추가) 버튼
     $("#btnPostImgUpload").click(function(){
         $("#postImgInput").click();
     });
 
     $("#postImgInput").on('change', function(event){
 
-        var newImgName = event.target.files[0];
-        $("#postImgName").text(newImgName.name);
+        var newImgFile = event.target.files[0];
+        $("#postImgName").text(newImgFile.name);
 
-        var newImgFile = $('<img>').addClass('newImage');
-        newImgFile.attr('src', URL.createObjectURL(newImgName));
-        newImgFile.attr('alt', '업로드된 이미지');
-        newImgFile.css({
-            width: '100%',
-            display: 'none',
-            objectFit: 'contain'
-        });
+        var newImgTag = $('<img>').addClass('newImage');
+        newImgTag.attr('src', URL.createObjectURL(newImgFile));
+        newImgTag.attr('alt', '업로드된 이미지');
 
-        $('#postImg').append(newImgFile);
+        $('#postImg').append(newImgTag);    // div#postImg 안에 newImgTag(= <img>)
+
+        var duplicateAllow = event.target.value[0]
+        duplicateAllow = null;
 
     });
 
 });
 
-
 // 사진 업로드 후 취소 눌렀다가 동일 사진 업로드 하면 파일 이름 안나오고 업로드도 안되는 오류 발생
-//      ㄴ img태그를 만들 때 동일 사진을 업로드 하면 새로 img태그가 만들어지지 않고 기존에 있던 img태그 내용이 수정됨.
-
-// 저장 누르고 사진 넣어지면 그다음 카메라 버튼 눌렀을 때 '취소', '저장' => '변경', '삭제'로 변경되도록 하기
-//      ㄴ HTML에서 따로 div 만들지 말고 addClass, removeClass, 그에 따른 css와 js만 새로 만들기 ( 변경은 #btnPostImgChange, 삭제는 #btnPostImgRemove로 명명 )
-//          ㄴ 이게 안된다면 따로 #btnPostImgChange, #btnPostImgRemove 버튼을 만든 뒤에 display: none, block으로 처리하기
+//      ㄴ event.target.value를 초기화 해야함.
