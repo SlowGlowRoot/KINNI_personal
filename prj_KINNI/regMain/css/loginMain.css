@@ -5,7 +5,7 @@
 
 ul {list-style: none;}
 a {text-decoration: none;}
-button {background-color: transparent;}
+button {background-color: transparent; cursor: pointer;}
 
 body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif; color: #666;}
 .btnLogin {width: 220px; height: 30px; border-radius: 5px; margin-left: 50%; transform: translateX(-50%);}
@@ -32,7 +32,7 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif; color:
 
 #btnKinniLogin {background-color: #E1DFF2; margin-top: 10px;}
 
-#regWrap {width: 200px; height: 20px; margin: 35px auto 0;}
+#regWrap {width: 196px; height: 20px; margin: 35px auto 0;}
 #regWrap span {font-size: 8px; font-weight: bold; color: #000; margin-top: 4px; float: left;}
 #regWrap #btnRegJoin {width: 100px; height: 20px; float: right;
     border: 1px solid #BFBBE8; border-radius: 10px; box-sizing: border-box;}
