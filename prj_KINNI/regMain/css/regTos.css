@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; border: 0;}
+*:focus {outline: 0;}
+
+ul {list-style: none;}
+a {text-decoration: none;}
+button {background-color: transparent; cursor: pointer;}
+
+body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
+
+#regTosWrap {width: 390px; height: 844px; margin: auto; background-color: #fff; position: relative;}
+#regTosWrap h1 {padding-top: 90px; text-align: center; font-size: 24px; font-weight: bold; color: #666;}
+#kinniTosTxt {width: 250px; height: 280px; margin: 45px 0 45px 50%; transform: translateX(-50%); resize: none;
+    border: 1px solid #CDCDCD; border-radius: 5px; box-sizing: border-box; font-size: 5px; padding: 2px;}
+
+#kinniTosTxt::-webkit-scrollbar {width: 5px;}
+#kinniTosTxt::-webkit-scrollbar-thumb {height: 30%; background: #ddd; border-radius: 4px;}
+#kinniTosTxt::-webkit-scrollbar-track {background: transparent;}
+
+#agreeTosWrap {width: 120px; height: 18px; margin: auto; display: flex; align-items: center; justify-content: center;}
+#agreeTosWrap input {width: 18px; height: 10px; margin-right: 5px;}
+#agreeTosWrap span {font-size: 12px;}
+
+#btnRegTosWrap {position: absolute; width: 100%; height: 30px; bottom: 240px;
+    display: flex; justify-content: space-evenly;}
+#btnRegTosWrap > button {width: 90px; height: 30px; border-radius: 5px; font-size: 12px; font-weight: bold; color: #444;}
+#btnTosConfirm {background-color: #E1DFF2; clear: both; cursor: pointer;}
+#btnTosCancel {background-color: #fff; border : 1.5px solid #BFBBE8; box-sizing: border-box; float: left; cursor: pointer;}
