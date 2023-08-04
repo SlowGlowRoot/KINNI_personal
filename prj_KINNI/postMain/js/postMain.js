@@ -52,8 +52,6 @@ $(function(){
         $("#postImgModal").fadeIn(0);
         $("#modalBg").fadeIn(0);
         $("#modalBg").css("background-color", "rgba(0,0,0,.3)")
-
-        
     });
 
         // 추가한 사진 취소 버튼
