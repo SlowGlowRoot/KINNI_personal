@@ -15,7 +15,7 @@ $(function(){
         }
     });
 
-    $("#postImgUploadWrap").click(function(){
+    $("#btnRegTosConfirm").click(function(){
         $("#regTosModal").fadeOut(0);
         $("#modalBg").fadeOut(0);
         $("#modalBg").css("background-color", "transparent")

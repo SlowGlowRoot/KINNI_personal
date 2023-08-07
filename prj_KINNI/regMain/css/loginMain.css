@@ -30,6 +30,7 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif; color:
 #loginMain .inputWrap input {font-size: 12px; width: 200px; height: 16px; padding-left: 2px; float: right;
     border-bottom: 1px solid #A9A6C6; box-sizing: border-box;}
 #pwEye, #checkPwEye {position: absolute; top: 2px; right: 2px; font-size: 10px; cursor: pointer;} 
+.warningTxt > span {font-size: 5px; font-weight: bold; color: #f00; margin: 2px 2px 0 0; float: right; text-align: right; display: none;}
 
 #btnKinniLogin {background-color: #E1DFF2; margin-top: 10px;}
 

@@ -1,6 +1,24 @@
 $(function(){
 
     $("#btnKinniLogin").on('click', function(){
+        $(".warningTxt > span").css('display', 'none');
+
+        if( $("#inputEmail").val() == "" ) {
+            $(".warningTxt > span:first-child").css('display', 'inline');
+            $("#inputEmail").focus();
+            return false;
+        } else {
+            $(".warningTxt > span:first-child").css('display', 'none');
+        }
+
+        if( $("#inputPw").val() == "" ) {
+            $(".warningTxt > span:last-child").css('display', 'inline');
+            $("#inputPw").focus();
+            return false;
+        } else {
+            $(".warningTxt > span:last-child").css('display', 'none');
+        }
+
         location.href = '키니 메인 위치';
     });
 
