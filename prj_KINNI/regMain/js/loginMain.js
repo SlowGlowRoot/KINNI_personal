@@ -1,5 +1,11 @@
 $(function(){
 
+    $(document).on('keypress', function(e) {
+        if (e.which === 13) { // Enter키 키코드 (=13)
+            $("#btnKinniLogin").click();
+        }
+    });
+
     $("#btnKinniLogin").on('click', function(){
         $(".warningTxt > span").css('display', 'none');
 
@@ -19,7 +25,8 @@ $(function(){
             $(".warningTxt > span:last-child").css('display', 'none');
         }
 
-        location.href = '키니 메인 위치';
+        location.herf = '../../postMain/postMain.html';
+        // location.replace('../../postMain/postMain.html');
     });
 
     $("#btnRegJoin").on('click', function(){

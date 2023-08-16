@@ -64,11 +64,11 @@ $(function(){
         }
     });
 
-    // 정식 실행 시 지워야 하는 거
-    // $("#inputEmail").val("kinni@kinni.com")
-    // $("#inputPw").val("123qwe")
-    // $("#inputCheckPw").val("123qwe")
-    // $("#inputNick").val("지존키니")
+    // 정식 실행 시 비활성화
+        $("#inputEmail").val("kinni@kinni.com")
+        $("#inputPw").val("k1nn1")
+        $("#inputCheckPw").val("k1nn1")
+        $("#inputNick").val("지존키니")
 
     // 이메일·비밀번호·닉네임 정규식
     var regEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/i;
@@ -139,10 +139,7 @@ $(function(){
     });
 
     $("#btnGoToKinni").on('click', function(){
-        location.href = '../../postMain/postMain.html';
+        window.location.replace('../../regMain/loginMain.html');
     });
 
 });
-
-// span을 두개 넣고, first-child(공란 경고)와 last-child(문자/서식 제한 경고)로 나눠서 띄우기
-// 비밀번호 확인의 경우에만 공란 경고 없이, last-child("비밀번호가 일치하지 않습니다.")만 띄우기

@@ -7,7 +7,7 @@ ul {list-style: none;}
 a {text-decoration: none;}
 button {background-color: transparent;}
 
-body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
+body {font-family: 'Nanum Gothic', sans-serif;}
 #postWrap {width: 390px; margin: auto; background-color: #fff; position: relative;}
 
 /* 헤드 영역 */
@@ -46,11 +46,12 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif;}
 }
     /* #postLnb button a {font-size: 26px; color: #444;} */
 
-#keyboard {width: 100%; height: 353px; background-color: #d9d9d9;}
+#keyboard {width: 100%; height: 353px;
+    background-color: #d9d9d9;
+    background-color: #fff;}
 
-#modalBg {width: 390px; height: 100%;
-    /* background-color: rgba(0,0,0,.6); */
-    position: absolute; top: 0px; left: 50%; transform: translateX(-50%);
+#modalBg {width: 100%; height: 100%;
+    position: fixed; top: 0; left: 0;
     display: none;
 }
 

@@ -7,8 +7,10 @@ ul {list-style: none;}
 a {text-decoration: none;}
 button {background-color: transparent; cursor: pointer;}
 
-body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif; color: #666;}
-.btnLogin {width: 220px; height: 30px; border-radius: 5px; margin-left: 50%; transform: translateX(-50%);}
+body {
+    /* background-color: #f4f4f4; */
+    font-family: 'Nanum Gothic', sans-serif; color: #666;}
+.btnLogin {width: 220px; height: 30px; border-radius: 5px; display: block; margin: auto;}
 .btnLogin p {font-size: 12px; font-weight: bold; text-align: center; color: #333;}
 
 #loginWrap {width: 390px; height: 844px; margin: auto; background-color: #fff; position: relative;}
@@ -22,7 +24,7 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif; color:
     position: absolute; z-index: 99; left: 50%; transform: translateX(-50%);}
 #hr #hrTxt p {text-align: center;}
 
-#loginMain {width: 284px; height: 140px; margin: auto;
+#loginMain {width: 284px; height: 140px; margin: auto; position: relative;
     /* background-color: rgba(0,0,255,.1); */
 }
 #loginMain .inputWrap {width: 100%; height: 20px; margin-bottom: 30px; position: relative;}
@@ -30,7 +32,8 @@ body {background-color: #f4f4f4; font-family: 'Nanum Gothic', sans-serif; color:
 #loginMain .inputWrap input {font-size: 12px; width: 200px; height: 16px; padding-left: 2px; float: right;
     border-bottom: 1px solid #A9A6C6; box-sizing: border-box;}
 #pwEye, #checkPwEye {position: absolute; top: 2px; right: 2px; font-size: 10px; cursor: pointer;} 
-.warningTxt > span {font-size: 5px; font-weight: bold; color: #f00; margin: 2px 2px 0 0; float: right; text-align: right; display: none;}
+.warningTxt > span {font-size: 5px; font-weight: bold; color: #f00; margin: 2px 2px 0 0; float: right; text-align: right; display: none;
+    position: absolute; bottom: 55px; right: 0;}
 
 #btnKinniLogin {background-color: #E1DFF2; margin-top: 10px;}
 
